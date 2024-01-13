@@ -4,8 +4,8 @@ from fastapi import Depends, HTTPException
 import requests
 from fastapi.responses import RedirectResponse
 
-GITHUB_CLIENT_ID = "c9878e72ce637c337a8c"
-GITHUB_CLIENT_SECRET = "7c643ca4cd8db87046fc9d96085278c807225869"
+GITHUB_CLIENT_ID = ""
+GITHUB_CLIENT_SECRET = ""
 
 
 def login_github(): 
@@ -33,14 +33,12 @@ def github_code(query_params):
     print(x.text)
     
 
-# a58bc5bb48e93b45503e
-# github-integration  | access_token=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&scope=&token_type=bearer
 
 def get_github_user(query_params):
     
     url = 'https://api.github.com/user'
     
-    headers = {'Authorization': "Bearer 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" ,    
+    headers = {'Authorization': "Bearer " ,    
             }
     x = requests.get(url, headers = headers)
     
